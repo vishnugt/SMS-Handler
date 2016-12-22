@@ -55,7 +55,7 @@ public class IncomingSms extends BroadcastReceiver {
             }
 
             try {
-                URL url = new URL("http://4e16c88d.ngrok.io/user/emergency");
+                URL url = new URL("http://52.66.134.228:4000/user/emergency");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);
@@ -124,8 +124,7 @@ public class IncomingSms extends BroadcastReceiver {
 
                     // Show Alert
                     int duration = Toast.LENGTH_LONG;
-                    Toast toast = Toast.makeText(context,
-                            "senderNum: "+ senderNum + ", message: " + message, duration);
+                    Toast toast = Toast.makeText(context, "SMS Received, Firing up an emergency request", duration);
                     toast.show();
 
 
